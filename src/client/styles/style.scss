@@ -1,0 +1,56 @@
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 40px;
+  text-align: center;
+  font-size: large;
+}
+
+body {
+  height: 100%;
+  background-image: url(../media/TogetherInTravel.jpg);
+  background-repeat: no-repeat;
+ 
+}
+
+.cap {
+  background-color: transparent;
+  align-items: center;
+ 
+}
+
+
+
+form {
+  border: 1px solid #545454;
+  border-radius: 3px;
+  padding: 40px;
+}
+
+input {
+  padding: 5px 20px;
+  width: 100%;
+  line-height: 16px;
+  margin: 10px 0;
+}
+
+footer{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 40px;
+  background-color: darkslategrey;
+  color: floralwhite;
+  text-align: center;
+  font-size: large;
+}
+
+@media screen and (min-width: 576px) {
+  .jumbotron {
+    padding: 8rem 2rem;
+  }
+}
+
+
+@import "~bootstrap/scss/bootstrap";
+// @import '~bootstrap-sass/scss/bootstrap';
