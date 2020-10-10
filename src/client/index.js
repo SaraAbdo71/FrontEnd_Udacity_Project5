@@ -1,24 +1,19 @@
- import jquery from "./js/jquery.min.js"
- //import bootstrap from "./js/bootstrap.min.js";
-
-
-import './styles/style.scss'
-import 'bootstrap';
-
-
-window.Popper = require('popper.js').default;
-window.$ = window.jQuery = require('jquery');
-
-require('bootstrap');
-
-
- import actions from '../client/js/app.js';
+import handleSubmit from "./js/app.js";
+require ("bootstrap");
+import jquery from "./js/jquery.min.js";
+import "./styles/style.scss";
+import "bootstrap";
 import Logo from "./media/Logo.png";
-import background from "./media/TogetherInTravel.jpg"
+import background from "./media/TogetherInTravel.jpg";
+import "./js/app.js";
+//import axios from 'axios';
 
+window.Popper = require("popper.js").default;
+window.$ = window.jQuery = require("jquery");
 
-import  "./js/app.js";
-// import  "../js/index.js;
-
-
+document.addEventListener('DOMContentLoaded', function(){
+  document
+      .getElementById("btnSearch")
+      .addEventListener("click", handleSubmit);
+});
 

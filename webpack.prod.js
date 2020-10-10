@@ -2,11 +2,17 @@ const path = require("path");
 const webpack = require("webpack");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
-module.expor
-ts = {
+module.exports = {
   entry: "./src/client/index.js",
   mode: "production",
+  devtool: 'source-map',
+    stats: 'verbose',
+    output: {
+        libraryTarget: 'var',
+        library: 'Client'
+    },
   module: {
     rules: [
       {
@@ -30,7 +36,12 @@ ts = {
           {
             loader: "sass-loader", // compiles Sass to CSS
           },
+          
         ],
+        
+      }, {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ["file-loader"],
       },
     ],
   },
@@ -49,5 +60,9 @@ ts = {
       cleanStaleWebpackAssets: true,
       protectWebpackAssets: false,
     }),
+    new WorkboxPlugin.GenerateSW()
+
   ],
+  
+
 };

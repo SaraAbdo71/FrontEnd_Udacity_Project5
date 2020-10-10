@@ -2,7 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const WorkboxPlugin = require("workbox-webpack-plugin");
+
 
 module.exports = {
   entry: "./src/client/index.js",
@@ -42,21 +42,7 @@ module.exports = {
       },
     ],
   },
-  devServer: {
-    compress: true,
-    historyApiFallback: true,
-    hot: true,
-    inline: true,
-    host: "localhost", // Defaults to `localhost`
-    port: 8089, // Defaults to 8080
-    proxy: {
-      "^/api/*": {
-        target: "http://localhost:8080/api/",
-        secure: false,
-      },
-    },
-  },
-  plugins: [
+plugins: [
     new HtmlWebPackPlugin({
       template: "./src/client/views/index.html",
       filename: "./index.html",

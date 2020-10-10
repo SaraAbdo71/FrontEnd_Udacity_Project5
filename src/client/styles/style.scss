@@ -10,20 +10,19 @@ header {
 body {
   height: 100%;
   background-image: url(../media/TogetherInTravel.jpg);
+  background-size: cover;
   background-repeat: no-repeat;
- 
 }
 
-.cap {
-  background-color: transparent;
-  align-items: center;
- 
+.container {
+  background: rgba(122, 130, 136, 0.2)!important; 
 }
-
-
+.white {
+  color:lightgray;
+}
 
 form {
-  border: 1px solid #545454;
+ 
   border-radius: 3px;
   padding: 40px;
 }
@@ -34,7 +33,18 @@ input {
   line-height: 16px;
   margin: 10px 0;
 }
-
+.card{
+  background-color: rgba(17,17,17,0.6)!important;
+  border: 1px solid rgba(17,17,17,0.6);
+}
+.btn-secondary{
+  color: white!important;
+  background-color:  rgba(17,17,17,0.6)!important;
+}
+.btn-primary{
+  color: white!important;
+  background-color:  rgba(17,17,17,0.6)!important;
+}
 footer{
   display: flex;
   justify-content: space-between;
