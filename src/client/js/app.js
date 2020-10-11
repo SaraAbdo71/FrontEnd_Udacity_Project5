@@ -5,6 +5,7 @@ const appURL = "http://localhost:8080";
 const city = document.getElementById("city");
 const dateS = document.getElementById("date_start");
 const dateE = document.getElementById("date_end");
+const showdata = document.getElementById("showData");
 
 const tripto = document.getElementById("tripTo");
 const CounDown = document.getElementById("count");
@@ -13,6 +14,7 @@ const rturn = document.getElementById("rturn");
 const weather = document.getElementById("weather");
 const rtime = document.getElementById("rtime");
 const showIMG = document.getElementById("showIMG");
+const arriv = document.getElementById("arriv");
 
 const btnSearch = document.getElementById("btnSearch");
 
@@ -29,19 +31,25 @@ export function handleSubmit(event) {
   console.log(geoFURL);
 
   if (!city.value && !dateS.value && !dateE.value) {
-    // return alert(" Please enter your Trip Data");
+    return alert(" Please enter your Trip Data");
   }
 
-  console.log("data333333");
   const data = getData(geoFURL).then((data) => {
-    console.log("data**");
-    console.log(data);
-    showIMG.setAttribute = ("src", data.img.webformatURL);
+    //showdata.removeAttribute = "hidden";
+
     tripto.innerHTML = "Trip to : " + city.value;
-    dateS.innerHTML ="Arriving date : "+ dateS.value;
-    countTimer();
+
+    arriv.innerHTML = "Arriving date : " + dateS.value;
     rturn.innerHTML = "Leaving at : " + dateE.value;
-    weather.innerHTML ="Temprature :"+res.data.weather.data.temp +"-"+res.data.weather.data.weather.description;
+
+    countTimer();
+    console.log(data.img.webformatURL);
+    weather.innerHTML =
+      "Temprature :" +
+      data.weather.data[0].temp +
+      "-" +
+      data.weather.data[0].weather.description;
+    showIMG.setAttribute = ("src", data.img[0].webformatURL);
   });
 }
 
@@ -62,11 +70,10 @@ export const countTimer = async () => {
     "</b>" +
     "<b> \n Day(s)</b>";
   dura.innerHTML =
-    "Length of Trip: \n" +
+    "Length of Trip : \n" +
     Math.ceil((enDate - depart) / (1000 * 60 * 60 * 24)) +
     "\n days";
 };
-
 
 //get and post data from an api
 export const getData = async (url = "") => {
