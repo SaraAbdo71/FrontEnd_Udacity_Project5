@@ -49,7 +49,7 @@ export function handleSubmit(event) {
       data.weather.data[0].temp +
       "-" +
       data.weather.data[0].weather.description;
-    showIMG.setAttribute = ("src", data.img[0].webformatURL);
+    showIMG.setAttribute = ("src", data.img.webformatURL);
   });
 }
 
