@@ -1,0 +1,10 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><title>Travel</title></head><body><header><nav class="navbar navbar-light"><a href="#"><img src="../media/Logo.png" width="170" height="70" class="d-inline-block align-top" alt=""></a></nav></header><main><form><div class="col-md-6"><div class="card flex-md-row mb-4 shadow-sm h-md-250"><div class="card-body d-flex flex-column align-items-start"><div class="container search"><div class="row" id="putData"><input id="city" placeholder="City" class="form-control col-md-3 mt-1"> <input type="date" id="date_start" placeholder="MM/dd/yyyy" class="form-control col-sm-6 col-md-3 mt-1"> <input type="date" id="date_end" placeholder="MM/dd/yyyy" class="form-control col-sm-6 col-md-3 mt-1"> <button class="btn btn-secondary col-md-2 mt-1" type="button" id="btnSearch">Search</button></div></div></div></div></div><div class="row"><div class="col-md-6"><div class="card border-primary flex-md-row mb-4 shadow-sm h-md-250"><div class="card-body d-flex flex-column align-items-start"><div class="card-body container-fluid white" style="display:none" id="showData"><div id="tripTo"></div><div id="arriv"></div><div id="rturn"></div><div id="dura"></div><div id="count"></div><div id="weather"></div><div id="rtime"></div><div></div><div class="card" style="width: 18rem;"><img class="card-img-top card-img-right flex-auto d-none d-lg-block" id="showIMG" alt="image" style="width: 300px; height: 300px;"></div></div></div></div></div></div></form></main><script>// Check that service workers are supported
+  if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+     /* window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js'); });*/
+
+           navigator.serviceWorker.getRegistrations().then(function(registrations)
+            { for(let registration of registrations) { registration.unregister() } })
+
+      };</script><script src="main.js"></script></body></html>
