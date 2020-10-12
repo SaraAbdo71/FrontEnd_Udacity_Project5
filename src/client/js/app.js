@@ -30,26 +30,36 @@ export function handleSubmit(event) {
   console.log("Start Submit");
   console.log(geoFURL);
 
-  if (!city.value && !dateS.value && !dateE.value) {
-    return alert(" Please enter your Trip Data");
-  }
-
   const data = getData(geoFURL).then((data) => {
-    //showdata.removeAttribute = "hidden";
+    console.log("data =>", data);
 
-    tripto.innerHTML = "Trip to : " + city.value;
+    if (!city.value && !dateS.value && !dateE.value) {
+      return alert(" Please enter your Trip Data");
+    } else {
+      showdata.style.display = "block";
+      console.log(data.city);
+      tripto.innerHTML =
+        "Trip to : " + data.city.countryName + " - " + data.city.name;
 
-    arriv.innerHTML = "Arriving date : " + dateS.value;
-    rturn.innerHTML = "Leaving at : " + dateE.value;
+      arriv.innerHTML = "Arriving date : " + dateS.value;
+      rturn.innerHTML = "Leaving at : " + dateE.value;
 
-    countTimer();
-    console.log(data.img.webformatURL);
-    weather.innerHTML =
-      "Temprature :" +
-      data.weather.data[0].temp +
-      "-" +
-      data.weather.data[0].weather.description;
-    showIMG.setAttribute = ("src", data.img.webformatURL);
+      countTimer();
+      console.log(data.img.webformatURL);
+
+      weather.innerHTML =
+        "Temprature :" +
+        data.weather.data[0].temp +
+        " - " +
+        data.weather.data[0].weather.description;
+        if(!data.img){
+          showIMG.src="./src/client/media/noimgavailable.png"
+        }else
+        {
+        showIMG.src= data.img.webformatURL;
+      }
+      console.log(showIMG);
+    }
   });
 }
 

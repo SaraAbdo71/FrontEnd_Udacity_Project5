@@ -1,17 +1,29 @@
-Capstone Project for Udacity's front-End Nano Degree program.
-Basic travel planner that gives returns an image of destination, current weather of the destination, and length of trip. The app also allows users to add notes for their trip! The purpose of this project was to understand how to implement multiple APIs as well as developing skills working with javascript, HTML, CSS, SCSS and webpack.
+## Welcome to MarkdownPad 2
 
-Getting Started
-To run the project, node.js is required.
+**MarkdownPad** is a full-featured Markdown editor for Windows.
 
-installation instructions: https://nodejs.org/en/download/
-After installing node.js, install npm (node package manager) by running the script:
+### Built exclusively for Markdown
 
-npm i
+Enjoy first-class Markdown support with easy access to Markdown syntax and convenient keyboard shortcuts.
 
-To start the server, run the command:
+Give them a try:
 
-npm start
+- **Bold** (`Ctrl+B`) and _Italic_ (`Ctrl+I`)
+- Quotes (`Ctrl+Q`)
+- Code blocks (`Ctrl+K`)
+- Headings 1, 2, 3 (`Ctrl+1`, `Ctrl+2`, `Ctrl+3`)
+- Lists (`Ctrl+U` and `Ctrl+Shift+O`)
 
-Then go to http://localhost:8080 to view the app!
+### See your changes instantly with LivePreview
 
+Don't guess if your [hyperlink syntax](http://markdownpad.com) is correct; LivePreview will show you exactly what your document looks like every time you press a key.
+
+### Make it your own
+
+Fonts, color schemes, layouts and stylesheets are all 100% customizable so you can turn MarkdownPad into your perfect editor.
+
+### A robust editor for advanced Markdown users
+
+MarkdownPad supports multiple Markdown processing engines, including standard Markdown, Markdown Extra (with Table support) and GitHub Flavored Markdown.
+
+With a tabbed document interface, PDF export, a built-in image uploader, session management, spell check, auto-save, syntax highlighting and a built-in CSS management interface, there's no limit to what you can do with MarkdownPad.
