@@ -1,5 +1,5 @@
 // Setup empty JS object to act as endpoint for all routes
-projectData = {};
+
 const port = 8080;
 var path = require("path");
 const dotenv = require("dotenv");
@@ -32,6 +32,14 @@ app.get("/", function (req, res) {
   res.sendFile(path.resolve("dist/index.html"));
 });
 
+// server test route
+app.get('/test', function(req, res) {
+  res.json({
+    status : 200,
+    message: 'pass!',
+  })
+});
+
 app.post("/add", addData);
 
 function addData(req, response) {
@@ -52,6 +60,7 @@ app.post("/search", function (req, res) {
   console.log(data);
   return res.send({ type: "Success" });
 });
+
 
 app.get("/geonames", function (req, res) {
   console.log("urlCity");
@@ -86,6 +95,7 @@ app.get("/geonames", function (req, res) {
     });
 });
 
+
 async function getWeather(lat, lng) {
   const urlWeath =
     process.env.wURL + "lon=" + lng + process.env.wKey + "&lat=" + lat;
@@ -109,3 +119,4 @@ async function getImg(city) {
     return { error: "no results" };
   }
 }
+module.exports = app;
